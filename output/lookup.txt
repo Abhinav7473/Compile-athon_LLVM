@@ -1,0 +1,15 @@
+Operation Frequency:
+mul: 2
+
+Lookup Table:
+add             -> ADD
+sub             -> SUB
+mul             -> MUL
+load            -> LD
+store           -> ST
+icmp            -> CMP
+br              -> BR
+getelementptr   -> GEP
+sext            -> SEXT
+trunc           -> TRUNC
+phi             -> PHI
