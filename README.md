@@ -83,29 +83,59 @@ Here is the structure of the repository:
 2. Install Dependencies using `requirements.txt`
 
 ### Running the Compiler:
-1. Start the server:
-    npm start
+(Currently this project is intented to work on Linux only)
+1. Run the compiler
+```
+chmod +x run.sh
+# Execute the compiler
+./run.sh
+```
 2. Access the web interface at `http://localhost:3000`.
 3. Upload your C++ code for compilation or use `example.cpp`.
 
 ### Outputs:
-Compiled files will be available in the `/output` directory.
+Compiled files will be available in the `/PIM_Compiler/outputs` directory.
 
 ---
 
 ## Code Overview
 
-### `example.cpp`
-Implements matrix multiplication using nested loops. Accepts two matrices as input, verifies their compatibility for multiplication, and computes the resultant matrix.
+### `streamlit_app.py`
+A comprehensive compiler interface that translates C++ code to custom PIM architecture instructions through a multi-stage pipeline.
 
-### `LUT.py`
-Analyzes operation frequency in C++ code and maps operations to short-form ISA mnemonics using a lookup table.
+#### **File Processing**
+- Handles C++ file uploads and displays content in formatted view.  
+- Manages uploads and outputs directories.  
+- Provides download functionality for all generated files.  
 
-### `tac_extractor.py`
-Parses LLVM IR to extract instructions in Three-Address Code (TAC) format using regular expressions. Identifies binary operations, comparisons, loads/stores, and branching instructions.
+#### **Compilation Pipeline**
+- **LLVM IR Generation**: Uses `clang++` to convert C++ to LLVM IR.  
+- **IR Optimization**: Applies `-O2` optimizations via `opt` tool.  
+- **TAC Extraction**: Parses LLVM IR to Three-Address Code (TAC) using regex patterns.  
+- **ISA Generation**: Converts TAC to custom PIM assembly instructions.  
+- **LUT Generation**: Creates operation frequency analysis and lookup tables.  
 
-### `app.py`
-A Node.js backend that handles compilation requests via REST API endpoints. Generates `.ll`, `.tac`, `.asm`, and lookup files based on user-provided C++ code.
+#### **Core Components**
+- **Operation Detection**: Regex-based pattern matching for LLVM operations.  
+- **PIM ISA Mapping**: Implements LUT programming and execution phases.  
+- **Memory Operations**: Handles `ACTIVATE`, `LOAD`, and `STORE` commands.  
+- **Compute Operations**: Manages `MAC` operations (multiply-accumulate).  
+
+#### **UI Features**
+- Modern dark-themed interface with custom CSS.  
+- Real-time compilation status tracking.  
+- Two-column results display (LLVM IR + TAC, ISA + LUT).  
+- Responsive design with download buttons for all outputs.  
+
+#### **Key Functions**
+- `generate_llvm_ir()`: Converts C++ to LLVM IR.  
+- `optimize_llvm_ir()`: Applies compiler optimizations.  
+- `parse_llvm_to_tac()`: Extracts Three-Address Code.  
+- `map_tac_to_isa()`: Generates PIM-specific assembly.  
+- `generate_lut_file()`: Creates operation analysis reports.  
+
+This application provides a complete workflow from C++ source to PIM-executable code with visual feedback at each compilation stage.
+
 
 ![Enhanced PIM Architecture Compiler Interface](https://pplx-res.cloudinary.com/image/upload/v1743303664/user_uploads/fCqiIIeFzaFzBfk/WhatsApp-Image-2025-03-30-at-07.24.10_f901eec7.jpg)
 
