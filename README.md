@@ -83,15 +83,16 @@ Here is the structure of the repository:
 
 ### Prerequisites:
 - Python 3.x
-- Node.js with `npm`
-- LLVM installed on your system
+- streamlit==1.44.0
+- llvmlite==0.40.0
+- libclang==14.0.0
+- numpy>=1.0
 
 ### Installation:
 1. Clone the repository:
     git clone https://github.com/Abhinav7473/Compile-athon_LLVM.git
     cd Compile-athon_LLVM
-2. Install Node.js dependencies:
-    npm install
+2. Install Dependencies using `requirements.txt`
 
 ### Running the Compiler:
 1. Start the server:
