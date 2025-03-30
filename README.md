@@ -185,3 +185,8 @@ This project is based on concepts discussed in *"Flexible Instruction Set Archit
 For further details, refer to Section IV-D of the research paper included in this repository.
 
 ---
+
+## Team Members
+- Jacob Cherian (22BRS1010)
+- Siddarth S (22BRS1078)
+- Abhinav Balakrishnan (22BRS1357)
