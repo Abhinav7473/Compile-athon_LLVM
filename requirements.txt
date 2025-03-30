@@ -1,0 +1,4 @@
+streamlit==1.44.0       # For the web app framework
+llvmlite==0.40.0       # Compatible with LLVM 14.0.0
+libclang==14.0.0        # Python bindings for Clang (matches your system Clang)
+numpy>=1.0             # Often required by llvmlite/other deps
