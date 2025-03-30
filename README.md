@@ -63,19 +63,7 @@ The project addresses the following objectives:
 
 Here is the structure of the repository:
 
-![Repository Structure](https://pplx-res.cloudinary.com/image/upload/v1743273347/user_uploads/XzSJrmchSMimSll/image.jpg)
-
-- **example.cpp**: Example C++ code for matrix multiplication.
-- **LUT.py**: Lookup table and operation frequency analysis.
-- **tac_extractor.py**: Extracts TAC from LLVM IR.
-- **server.js**: Web-based compiler backend.
-- **package.json**: Node.js project metadata.
-- **package-lock.json**: Dependency lock file.
-- **output/**: Directory for compiler-generated files:
-  - `output.ll`: Generated LLVM IR.
-  - `output.bin`: Binary executable.
-  - `output.isa`: ISA instruction stream.
-  - `lookup.txt`: Operation frequency report.
+![Repository Structure Diagram](https://pplx-res.cloudinary.com/image/upload/v1743303699/user_uploads/atpAFaSUGCyNxOU/image.jpg)
 
 ---
 
@@ -116,8 +104,14 @@ Analyzes operation frequency in C++ code and maps operations to short-form ISA m
 ### `tac_extractor.py`
 Parses LLVM IR to extract instructions in Three-Address Code (TAC) format using regular expressions. Identifies binary operations, comparisons, loads/stores, and branching instructions.
 
-### `server.js`
-A Node.js backend that handles compilation requests via REST API endpoints. Generates `.ll`, `.bin`, `.isa`, and lookup files based on user-provided C++ code.
+### `app.py`
+A Node.js backend that handles compilation requests via REST API endpoints. Generates `.ll`, `.tac`, `.asm`, and lookup files based on user-provided C++ code.
+
+![Enhanced PIM Architecture Compiler Interface](https://pplx-res.cloudinary.com/image/upload/v1743303664/user_uploads/fCqiIIeFzaFzBfk/WhatsApp-Image-2025-03-30-at-07.24.10_f901eec7.jpg)
+
+![Uploaded C++ Code Content](https://pplx-res.cloudinary.com/image/upload/v1743303684/user_uploads/ZbwyClznIsieZpB/WhatsApp-Image-2025-03-30-at-07.24.11_5334f421.jpg)
+
+![Compilation Results](https://pplx-res.cloudinary.com/image/upload/v1743303689/user_uploads/VCHLWuFjWqjpJPA/WhatsApp-Image-2025-03-30-at-07.24.11_78afd6fa.jpg)
 
 ---
 
