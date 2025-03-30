@@ -62,8 +62,9 @@ The project addresses the following objectives:
 ## Repository Structure
 
 Here is the structure of the repository:
+![Screenshot 2025-03-30 093110](https://github.com/user-attachments/assets/efefe4f0-4ae6-4e9e-a3d2-851ca99ff8ba)
 
-![Repository Structure Diagram](https://pplx-res.cloudinary.com/image/upload/v1743303699/user_uploads/atpAFaSUGCyNxOU/image.jpg)
+
 
 ---
 
